@@ -1,6 +1,9 @@
 <?php
-include_once 'inc/class.crud.php';
-$crud = new CRUD();
+include('inc/classcrud.php');
+
+//calling class from clascrud.php as object
+$crud = new db_class();
+
 if(isset($_POST['save']))
 {
 	$fname = $_POST['fname'];
@@ -11,6 +14,8 @@ if(isset($_POST['save']))
     $crud->create($fname,$lname,$city);
 	// insert
 	header("Location: index.php");
+
+	
 }
 
 
@@ -23,7 +28,8 @@ if(isset($_GET['del_id']))
 
 if(isset($_POST['update']))
 {
-	$id = $_GET['edt_id'];
+	$id = $_POST['userid'];
+	
 	$fname = $_POST['fname'];
 	$lname = $_POST['lname'];
 	$city = $_POST['city'];

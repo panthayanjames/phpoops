@@ -1,18 +1,9 @@
 <?php
-define('DB_SERVER','localhost');
-define('DB_USER','root');
-define('DB_PASSWORD','root');
-define('DB_NAME','OOPS');
+	$servername = "localhost";
+	$username = "root";
+	$password = "root";
+	$dbname = "oops";
 
-class DB_con
-{
-	function __construct()
-	{
-		$conn = mysqli_connect(DB_SERVER,DB_USER,DB_PASSWORD,DB_NAME) or die('error connecting to server'.mysql_error());
-		//mysql_select_db(DB_NAME, $conn) or die('error connecting to database->'.mysql_error());
-    }
-}
-
-
-
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
 ?>
